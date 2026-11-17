@@ -18,5 +18,11 @@ public class Movement : MonoBehaviour
         float y = Input.GetAxisRaw("Vertical");
 
         movement = new Vector2(x, y).normalized;
+
+        Debug.Log("X: " + x + " Y: " + y);
+    }
+    void FixedUpdate()
+    {
+        rb.linearVelocity = movement * MoveSpeed;
     }
 }
