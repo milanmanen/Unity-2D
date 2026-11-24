@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float MoveSpeed = 5f;
+    [SerializeField] private float _moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,10 +19,11 @@ public class Movement : MonoBehaviour
 
         movement = new Vector2(x, y).normalized;
 
-        Debug.Log("X: " + x + " Y: " + y);
+        //Debug.Log("X: " + x + " Y: " + y);
+
     }
     void FixedUpdate()
     {
-        rb.linearVelocity = movement * MoveSpeed;
+        rb.linearVelocity = movement * _moveSpeed;
     }
 }
